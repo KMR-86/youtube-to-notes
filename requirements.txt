@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+langchain
+langchain-openai
+langchain-community
+langchain-core
+langgraph
+langsmith
+youtube-transcript-api
+pytube
+google-api-python-client
+google-auth-oauthlib
+python-dotenv
