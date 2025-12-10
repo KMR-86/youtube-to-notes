@@ -7,6 +7,9 @@ env/
 # Environment Variables
 .env
 
+# Google Credentials (CRITICAL)
+client_secret.json
+
 # Python Bytecode and Cache
 __pycache__/
 *.pyc
