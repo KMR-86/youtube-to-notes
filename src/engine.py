@@ -8,6 +8,9 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # 1. Define the State
 # This is the "memory" that gets passed between steps.
 class NoteState(TypedDict):
