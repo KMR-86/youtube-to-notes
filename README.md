@@ -58,3 +58,51 @@ LANGCHAIN_ENDPOINT="[https://api.smith.langchain.com](https://api.smith.langchai
 LANGCHAIN_API_KEY="lsv2_..."
 LANGCHAIN_PROJECT="youtube-notes-app"
 ```
+
+
+### Running the Application
+**Start the Server:**
+
+```bash
+uvicorn src.main:app --reload
+```
+The API will be available at http://127.0.0.1:8000.
+
+Interactive documentation (Swagger UI) is at http://127.0.0.1:8000/docs.
+
+**API Reference**
+1. Health Check
+   ```Endpoint: GET /```
+
+Description: Checks if the API is running.
+
+2. Generate Notes
+   ```Endpoint: POST /api/v1/generate```
+
+Description: Triggers the AI agent to fetch the transcript and generate notes.
+
+**Request Body:**
+
+JSON
+
+{
+"url": "[https://www.youtube.com/watch?v=gnkDqqk40F4](https://www.youtube.com/watch?v=gnkDqqk40F4)"
+}
+
+**Response:**
+
+JSON
+
+{
+"video_url": "[https://www.youtube.com/watch?v=gnkDqqk40F4](https://www.youtube.com/watch?v=gnkDqqk40F4)",
+"notes": "Introduction to FastAPI..."
+}
+Example CURL Command:
+
+
+```bash
+curl -X 'POST' \
+'[http://127.0.0.1:8000/api/v1/generate](http://127.0.0.1:8000/api/v1/generate)' \
+-H 'Content-Type: application/json' \
+-d '{ "url": "[https://www.youtube.com/watch?v=gnkDqqk40F4](https://www.youtube.com/watch?v=gnkDqqk40F4)" }'
+```
